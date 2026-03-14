@@ -103,7 +103,7 @@
 //   for (let i = 0; i < numbers.length; i++) {
 //         if (num > numbers[i]) {
 //          num = numbers[i];
-//        }   
+//        }
 //   }
 //   return num;
     
@@ -118,7 +118,20 @@
 
 // Скористайтесь цим прикладом виклику функції для перевірки її роботи:
 // console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+// function findLongestWord(string) {
+//   let array = string.split(" ");
 
+//   let longWord = array[0];
+//   for (let i = 0; i < array.length; i++) {
+//     if (longWord.length < array[i].length) {
+//       longWord = array[i];
+//     }
+//   }
+
+//   return longWord;
+  
+// }
+// console.log(findLongestWord("London is the capital of Great Britain"));
 
 // 7
 // Напишіть скрипт, який для об'єкту user, послідовно:
@@ -136,39 +149,85 @@
 //   };
 
 
+// const user = {
+//     name: "John",
+//     age: 20,
+//     hobby: "tenis",
+//     premium: true,
+// };
+// user.mood = 'happy';
+// user.hobby = 'skydiving';
+// user.premium = false;
+// let keys = Object.keys(user);
+// for (const key of keys) {
+//  `${key}:${user[key]}`;
+  
+// }
+// console.log(user);
+
+
 // 8
 // Є об'єкт, в якому зберігаються зарплати команди
 // Напишіть код для додавання усіх зарплат та
 // збережіть його результат в змінній sum.
 // Якщо об'єкт salaries пустий, то результат має бути 0
-
 // const salaries = {
 //     Mango: 100,
 //     Poly: 160,
 //     Ajax: 1470,
 //   };
 
+//  const salaries = {
+//     Mango: 100,
+//     Poly: 160,
+//     Ajax: 1470,
+// };
+// let sum = 0;
+// let keys = Object.keys(salaries);
+// for (const key of keys) {
+//     sum += salaries[key];
+// }
+// console.log(sum);
+
 
 // 9
 // Створіть об'єкт calculator з наступними методами:
 // read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
-// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
-// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність 
+// властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою 
+// на наявність властивостей в об'єкті),
 // винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
 
 // Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
 // методи sum і mult мають повертати рядок 'No such propeties'
 
-
+const calculator = {
+  read(a, b){
+    this.a = a;
+    this.b = b;
+  },
+  sum() {
+  return this.a + this.b;
+  },
+  mult() { 
+ return this.read.a * this.read.b;
+  },
+  exist() { 
+    if (condition) {
+      
+    } else {
+      
+    }
+  },
+}
 // 10
 // Напишіть функцію calcTotalPrice(fruits, fruitName),
 // яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
 // Функція рахує і повертає загальну вартість фрукта
 // з таким ім'ям, ціною та кількістю з об'єкта.
-
-// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою 
+// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою
 // назвою фрукта, це також треба урахувати.
-
 // const fruits = [
 //     { name: "Яблуко", price: 45, quantity: 7 },
 //     { name: "Апельсин", price: 60, quantity: 4 },
@@ -178,4 +237,22 @@
 //     { name: "Банан", price: 125, quantity: 3 },
 //   ];
 
+//  const fruits = [
+//     { name: "Яблуко", price: 45, quantity: 7 },
+//     { name: "Апельсин", price: 60, quantity: 4 },
+//     { name: "Банан", price: 125, quantity: 8 },
+//     { name: "Груша", price: 350, quantity: 2 },
+//     { name: "Виноград", price: 440, quantity: 3 },
+//     { name: "Банан", price: 125, quantity: 3 },
+//   ];
+// function calcTotalPrice(fruits, fruitName) {
+//   let total = 0;
+//   for (const element of fruits) {
+//     if (fruitName === element.name) {
+//       total += element.price * element.quantity;
+//     }
+//   }
+//   return total;
+// }
+// console.log(calcTotalPrice(fruits, "Груша"));
 
